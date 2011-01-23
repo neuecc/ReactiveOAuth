@@ -74,7 +74,7 @@ static class Program
         // see details -> WPF Sample.
         //new OAuthClient(ConsumerKey, ConsumerSecret, accessToken)
         //{
-        //    Url = "http://chirpstream.twitter.com/2b/user.json"
+        //    Url = "https://userstream.twitter.com/2/user.json"
         //}.GetResponseLines()
         //.Run(s => Console.WriteLine(s));
     }

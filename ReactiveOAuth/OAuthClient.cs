@@ -63,12 +63,8 @@ namespace Codeplex.OAuth
                 case MethodType.Get:
                     return Observable.Defer(() => req.GetResponseAsObservable());
                 case MethodType.Post:
-                    // TODO:async write
-                    // .SelectMany(stream => stream.WriteAsObservable(postData, 0, postData.Length))
                     var postData = Encoding.UTF8.GetBytes(Parameters.ToQueryParameter());
-                    return Observable.Defer(() => req.GetRequestStreamAsObservable())
-                        .Do(stream => { using (stream) stream.Write(postData, 0, postData.Length); })
-                        .SelectMany(_ => req.GetResponseAsObservable());
+                    return req.UploadDataAsync(postData);
                 default:
                     throw new InvalidOperationException();
             }
@@ -77,19 +73,13 @@ namespace Codeplex.OAuth
         /// <summary>asynchronus GetResponse and return ResponseText</summary>
         public IObservable<string> GetResponseText()
         {
-            return GetResponse()
-                .Select(res => res.GetResponseStream())
-                .Select(stream => stream.ReadToEnd());
+            return GetResponse().SelectMany(res => res.DownloadStringAsync());
         }
 
         /// <summary>asynchronus GetResponse and return onelines</summary>
         public IObservable<string> GetResponseLines()
         {
-            return GetResponse()
-                .Select(res => res.GetResponseStream())
-                .SelectMany(s => Observable.Using(() => new StreamReader(s), sr => Observable.Repeat(sr)))
-                .TakeWhile(sr => !sr.EndOfStream)
-                .Select(sr => sr.ReadLine());
+            return GetResponse().SelectMany(res => res.DownloadStringLineAsync());
         }
     }
 }

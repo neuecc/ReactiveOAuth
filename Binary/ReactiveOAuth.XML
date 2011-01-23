@@ -66,5 +66,8 @@
         <member name="M:Codeplex.OAuth.ParametersExtension.ToQueryParameter(System.Collections.Generic.IEnumerable{Codeplex.OAuth.Parameter})">
             <summary>convert urlencoded querystring</summary>
         </member>
+        <member name="M:Codeplex.OAuth.Utility.UrlEncode(System.String)">
+            <summary>Escape RFC3986 String</summary>
+        </member>
     </members>
 </doc>

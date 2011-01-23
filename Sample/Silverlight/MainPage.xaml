@@ -4,9 +4,33 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    d:DesignHeight="300" d:DesignWidth="400">
+    Height="500" Width="400">
 
-    <Grid x:Name="LayoutRoot" Background="White">
-
+    <Grid>
+        <StackPanel>
+            <TextBlock>Twitter OAuth Sample</TextBlock>
+            <Button Content="Get RequestToken and Open AuthorizeUrl" Height="23" Name="GetRequestTokenButton" Width="auto" Click="GetRequestTokenButton_Click" />
+            <StackPanel Orientation="Horizontal">
+                <TextBlock>Enter PinCode :</TextBlock>
+                <TextBox Height="24" Name="PinCodeTextBox" Width="120" />
+                <Button Content="Get AccessToken" Height="23" Name="GetAccessTokenButton" Width="auto" Click="GetAccessTokenButton_Click" />
+            </StackPanel>
+            <TextBlock Name="AuthorizedTextBlock">UnAuthorized</TextBlock>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock>user_id :</TextBlock>
+                <TextBlock Name="UserIdTextBlock"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock>screen_name :</TextBlock>
+                <TextBlock Name="ScreenNameTextBlock"></TextBlock>
+            </StackPanel>
+            <Button Name="GetTimeLineButton" Click="GetTimeLineButton_Click">GetTimeLine</Button>
+            <ListBox Name="TimeLineViewListBox" Width="auto" Height="120" />
+            <StackPanel Orientation="Horizontal">
+                <TextBlock>Input :</TextBlock>
+                <TextBox Name="PostTextBox" Width="250"></TextBox>
+                <Button Name="PostButton" Width="50" Click="PostButton_Click">Post</Button>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </UserControl>

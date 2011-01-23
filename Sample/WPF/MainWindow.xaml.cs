@@ -136,7 +136,7 @@ namespace WPF
 
             var client = new OAuthClient(ConsumerKey, ConsumerSecret, accessToken)
             {
-                Url = "http://chirpstream.twitter.com/2b/user.json"
+                Url = "https://userstream.twitter.com/2/user.json"
             };
             stramingHandle = client.GetResponseLines()
                 .Where(s => !string.IsNullOrWhiteSpace(s)) // filter invalid data

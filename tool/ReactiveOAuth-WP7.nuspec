@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>ReactiveOAuth-WP7</id>
+        <version>0.2.0.0</version>
+        <title>ReactiveOAuth</title>
+        <authors>neuecc</authors>
+        <owners>neuecc</owners>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Reactive Extensions base OAuth library for Windows Phone 7.</description>
+        <language>en-US</language>
+        <licenseUrl>http://reactiveoauth.codeplex.com/license</licenseUrl>
+        <projectUrl>http://reactiveoauth.codeplex.com/</projectUrl>
+        <tags>OAuth Rx</tags>
+    </metadata>
+    <files>
+        <file src="../Binary/ReactiveOAuth.WP7.*" target="lib" />
+    </files>
+</package>

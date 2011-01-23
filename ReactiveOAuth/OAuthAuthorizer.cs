@@ -26,8 +26,7 @@ namespace Codeplex.OAuth
             req.Method = MethodType.Post.ToUpperString();
             req.ContentType = "application/x-www-form-urlencoded";
 
-            return Observable.Defer(() => req.GetResponseAsObservable())
-                .Select(res => res.GetResponseStream().ReadToEnd())
+            return req.DownloadStringAsync()
                 .Select(tokenBase =>
                 {
                     var splitted = tokenBase.Split('&').Select(s => s.Split('=')).ToDictionary(s => s.First(), s => s.Last());

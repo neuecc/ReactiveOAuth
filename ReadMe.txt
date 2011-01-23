@@ -1,6 +1,6 @@
 /*--------------------------------------------------------------------------
 * ReactiveOAuth
-* ver 0.1.0.0 (Sep. 12th, 2010)
+* ver 0.2.0.0 (Jan. 23th, 2011)
 *
 * created and maintained by neuecc <ils@neue.cc>
 * licensed under Microsoft Public License(Ms-PL)
@@ -10,9 +10,9 @@
 
 // Description
 
-OAuth library for .NET Framework 4 Client Profile and Windows Phone 7.
+OAuth library for .NET Framework 4 Client Profile, Silverlight4 and Windows Phone 7.
 ReactiveOAuth is based on Reactive Extensions(Rx)
-- http://msdn.microsoft.com/en-us/devlabs/ee794896.aspx
+- http://msdn.microsoft.com/en-us/data/gg577609
 All network access return IObservable<T> and everything is asynchronus.
 
 Rx is included in Windows Phone 7.
@@ -20,18 +20,25 @@ If you use ReactiveOAuth then can share code between WPF and Windows Phone 7.
 
 // Features
 
-* support Console/WPF and Windows Phone 7.
+* support Console/WPF, Silverlight4 and Windows Phone 7.
 * easy operation and high affinity for streaming api.
 
 // Notice
 
-currently target Rx version is Build 1.0.2698.0 - 9/10/2010
+currently target Rx version is Build 1.0.2838.0
 
 // Tutorial
 
-please see Console/WPF samples.
+please see Console/WPF/Silverlight/WP7 samples.
 
 // history
+
+2011-01-23
+    Fix Bug
+        wrong UrlEncode
+    Add
+        Silverlight Project and Sample
+        NuGet Online package(id:ReactiveOAuth)
 
 2010-09-12
     1st Release

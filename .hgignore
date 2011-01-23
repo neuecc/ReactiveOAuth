@@ -1,0 +1,8 @@
+glob:obj/*
+glob:*.suo
+glob:*.user
+glob:bin/*
+glob:obj/*
+glob:Bin/*
+glob:release/*
+glob:Binary/System.*
