@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Linq;
 using System.Net;
+using System.Reactive.Linq;
 using System.Xml.Linq;
 using Codeplex.OAuth;
 
@@ -32,7 +33,7 @@ static class Program
              })
              .Select(r => new { RequestToken = r.Token, PinCode = Console.ReadLine() })
              .SelectMany(a => authorizer.GetAccessToken("http://twitter.com/oauth/access_token", a.RequestToken, a.PinCode))
-             .Run(r =>
+             .ForEach(r =>
               {
                   userId = r.ExtraData["user_id"].First();
                   screenName = r.ExtraData["screen_name"].First();
@@ -56,7 +57,7 @@ static class Program
         };
         client.GetResponseText()
             .Select(s => XElement.Parse(s))
-            .Run(x => Console.WriteLine(x.ToString()));
+            .ForEach(x => Console.WriteLine(x.ToString()));
 
         // post flow
         // if post then set MethodType = MethodType.Post

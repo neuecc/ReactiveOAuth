@@ -3,6 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Browser;
+using System.Reactive.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Xml.Linq;

@@ -6,6 +6,11 @@ using System.Net;
 using System.Text;
 #if WINDOWS_PHONE
 using Microsoft.Phone.Reactive;
+#else
+using System.Reactive;
+using System.Reactive.Linq;
+using System.Diagnostics;
+using System.Reactive.Concurrency;
 #endif
 
 namespace Codeplex.OAuth
@@ -205,7 +210,7 @@ namespace Codeplex.OAuth
         public static IObservable<Unit> WriteAsync(this Stream stream, IObservable<byte> data, int chunkSize = 65536)
         {
             return Observable.Defer(() => data)
-                .BufferWithCount(chunkSize)
+                .Buffer(chunkSize)
                 .SelectMany(l => stream.WriteAsObservable(l.ToArray(), 0, l.Count))
                 .Finally(() => stream.Close());
         }
@@ -242,7 +247,7 @@ namespace Codeplex.OAuth
 
         public static IObservable<byte[]> ReadAsync(this Stream stream, int chunkSize = 65536)
         {
-            return Observable.Defer(() => Observable.Return(new byte[chunkSize]))
+            return Observable.Defer(() => Observable.Return(new byte[chunkSize], Scheduler.CurrentThread))
                 .SelectMany(buffer => stream.ReadAsObservable(buffer, 0, chunkSize),
                     (buffer, readCount) => new { buffer, readCount })
                 .Repeat()
@@ -265,7 +270,7 @@ namespace Codeplex.OAuth
 
         public static IObservable<string> ReadLineAsync(this Stream stream, Encoding encoding, int chunkSize = 65536)
         {
-            return Observable.CreateWithDisposable<string>(observer =>
+            return ObservableForCompatible.Create<string>(observer =>
             {
                 var decoder = encoding.GetDecoder();
                 var bom = encoding.GetChars(encoding.GetPreamble()).FirstOrDefault();

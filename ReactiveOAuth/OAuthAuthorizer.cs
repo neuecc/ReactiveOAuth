@@ -6,6 +6,9 @@ using System.Text;
 
 #if WINDOWS_PHONE
 using Microsoft.Phone.Reactive;
+#else
+using System.Reactive;
+using System.Reactive.Linq;
 #endif
 
 namespace Codeplex.OAuth

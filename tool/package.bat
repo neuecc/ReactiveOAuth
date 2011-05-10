@@ -1,2 +1,2 @@
-nuget p ReactiveOAuth.nuspec
-nuget p ReactiveOAuth-WP7.nuspec
+nuget pack ReactiveOAuth.nuspec
+nuget pack ReactiveOAuth-WP7.nuspec

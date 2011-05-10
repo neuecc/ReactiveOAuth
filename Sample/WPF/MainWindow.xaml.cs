@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Disposables;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Reactive.Disposables;
+using System.Reactive.Linq;
 using System.Windows;
 using System.Xml.Linq;
 using Codeplex.Data;

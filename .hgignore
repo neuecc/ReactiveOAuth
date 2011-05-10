@@ -6,3 +6,6 @@ glob:obj/*
 glob:Bin/*
 glob:release/*
 glob:Binary/System.*
+syntax: glob
+tool/archive.zip
+tool/*.nupkg
