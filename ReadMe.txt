@@ -1,6 +1,6 @@
 /*--------------------------------------------------------------------------
 * ReactiveOAuth
-* ver 0.3.0.0 (May. 10th, 2011)
+* ver 0.3.0.1 (Jun. 16th, 2011)
 *
 * created and maintained by neuecc <ils@neue.cc>
 * licensed under Microsoft Public License(Ms-PL)
@@ -33,16 +33,20 @@ please see Console/WPF/Silverlight/WP7 samples.
 
 // history
 
+2011-06-16
+Fix
+    Target Rx for 1.0.10605(Stable)
+
 2011-05-10
-    Fix
-        Target Rx for 1.1.10425.0
+Fix
+    Target Rx for 1.1.10425.0
 
 2011-01-23
-    Fix Bug
-        wrong UrlEncode
-    Add
-        Silverlight Project and Sample
-        NuGet Online package(id:ReactiveOAuth)
+Fix Bug
+    wrong UrlEncode
+Add
+    Silverlight Project and Sample
+    NuGet Online package(id:ReactiveOAuth)
 
 2010-09-12
-    1st Release
+1st Release
