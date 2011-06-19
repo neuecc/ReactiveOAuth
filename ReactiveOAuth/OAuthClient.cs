@@ -46,7 +46,7 @@ namespace Codeplex.OAuth
 #if WINDOWS_PHONE
             req.AllowReadStreamBuffering = false;
 #endif
-            var parameters = ConstructBasicParameters(Url, MethodType, AccessToken, Parameters.Concat(realm));
+            var parameters = ConstructBasicParameters(Url, MethodType, AccessToken, Parameters);
             req.Headers[HttpRequestHeader.Authorization] = BuildAuthorizationHeader(realm.Concat(parameters));
             req.Method = MethodType.ToUpperString();
             if (MethodType == OAuth.MethodType.Post) req.ContentType = "application/x-www-form-urlencoded";
