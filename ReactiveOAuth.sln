@@ -26,6 +26,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitterClientSample", "Samp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveOAuth.WP7", "ReactiveOAuth.WP7\ReactiveOAuth.WP7.csproj", "{8D2500E1-3BE9-4945-9918-5B092AEF3C63}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitpicClient", "Sample\TwitpicClient\TwitpicClient.csproj", "{9F2EDC59-AE1C-437B-AED4-9F1FA46E1699}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -110,6 +112,16 @@ Global
 		{8D2500E1-3BE9-4945-9918-5B092AEF3C63}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{8D2500E1-3BE9-4945-9918-5B092AEF3C63}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{8D2500E1-3BE9-4945-9918-5B092AEF3C63}.Release|x86.ActiveCfg = Release|Any CPU
+		{9F2EDC59-AE1C-437B-AED4-9F1FA46E1699}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{9F2EDC59-AE1C-437B-AED4-9F1FA46E1699}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{9F2EDC59-AE1C-437B-AED4-9F1FA46E1699}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{9F2EDC59-AE1C-437B-AED4-9F1FA46E1699}.Debug|x86.ActiveCfg = Debug|x86
+		{9F2EDC59-AE1C-437B-AED4-9F1FA46E1699}.Debug|x86.Build.0 = Debug|x86
+		{9F2EDC59-AE1C-437B-AED4-9F1FA46E1699}.Release|Any CPU.ActiveCfg = Release|x86
+		{9F2EDC59-AE1C-437B-AED4-9F1FA46E1699}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{9F2EDC59-AE1C-437B-AED4-9F1FA46E1699}.Release|Mixed Platforms.Build.0 = Release|x86
+		{9F2EDC59-AE1C-437B-AED4-9F1FA46E1699}.Release|x86.ActiveCfg = Release|x86
+		{9F2EDC59-AE1C-437B-AED4-9F1FA46E1699}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -119,5 +131,6 @@ Global
 		{17383F02-272C-40D6-8C2F-E39A871B6BB7} = {EC825208-2EBF-4C9A-BC28-C44EA4AE43B0}
 		{1991B7FA-7C26-4F5E-9BF6-C0867773B51E} = {EC825208-2EBF-4C9A-BC28-C44EA4AE43B0}
 		{A598E27C-C8FD-48C9-887D-39AEE3F92C3B} = {EC825208-2EBF-4C9A-BC28-C44EA4AE43B0}
+		{9F2EDC59-AE1C-437B-AED4-9F1FA46E1699} = {EC825208-2EBF-4C9A-BC28-C44EA4AE43B0}
 	EndGlobalSection
 EndGlobal
