@@ -44,7 +44,7 @@ namespace Codeplex.OAuth
             return req;
         }
 
-        public IObservable<string> UploadPicture(string filename, byte[] file)
+        public IObservable<string> UploadPicture(string filename, string message, byte[] file)
         {
             var req = CreateRequest("http://api.twitpic.com/2/upload.xml"); // choose xml or json
             req.Method = "POST";
@@ -64,13 +64,13 @@ namespace Codeplex.OAuth
                         sw.WriteLine("Content-Disposition: form-data; name=\"key\"");
                         sw.WriteLine();
                         sw.WriteLine(ApiKey);
-                        sw.WriteLine(boundary);
 
+                        sw.WriteLine(boundary);
                         sw.WriteLine("Content-Disposition: form-data; name=\"message\"");
                         sw.WriteLine();
-                        sw.WriteLine("");
-                        sw.WriteLine(boundary);
+                        sw.WriteLine(message);
 
+                        sw.WriteLine(boundary);
                         sw.WriteLine("Content-Disposition: form-data; name=\"media\"; filename=\"" + filename + "\"");
                         sw.WriteLine("Content-Type: application/octet-stream");
                         sw.WriteLine("Content-Transfer-Encoding: binary");

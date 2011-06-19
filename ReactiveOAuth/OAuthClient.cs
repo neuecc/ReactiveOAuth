@@ -37,17 +37,24 @@ namespace Codeplex.OAuth
             MethodType = OAuth.MethodType.Get;
         }
 
-        private WebRequest CreateWebRequest()
+        protected string AuthorizationHeader
         {
-            var realm = (Realm != null) ? new[] { new Parameter("realm", Realm) } : Enumerable.Empty<Parameter>();
-            var requestUrl = (MethodType == OAuth.MethodType.Get) ? Url + "?" + Parameters.ToQueryParameter() : Url;
+            get
+            {
+                var realm = (Realm != null) ? new[] { new Parameter("realm", Realm) } : Enumerable.Empty<Parameter>();
+                var parameters = ConstructBasicParameters(Url, MethodType, AccessToken, Parameters);
+                return BuildAuthorizationHeader(realm.Concat(parameters));
+            }
+        }
 
+        protected virtual WebRequest CreateWebRequest()
+        {
+            var requestUrl = (MethodType == OAuth.MethodType.Get) ? Url + "?" + Parameters.ToQueryParameter() : Url;
             var req = (HttpWebRequest)WebRequest.Create(requestUrl);
 #if WINDOWS_PHONE
             req.AllowReadStreamBuffering = false;
 #endif
-            var parameters = ConstructBasicParameters(Url, MethodType, AccessToken, Parameters);
-            req.Headers[HttpRequestHeader.Authorization] = BuildAuthorizationHeader(realm.Concat(parameters));
+            req.Headers[HttpRequestHeader.Authorization] = this.AuthorizationHeader;
             req.Method = MethodType.ToUpperString();
             if (MethodType == OAuth.MethodType.Post) req.ContentType = "application/x-www-form-urlencoded";
             if (ApplyBeforeRequest != null) ApplyBeforeRequest(req);

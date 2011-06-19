@@ -35,6 +35,7 @@
             <Button Name="StreamingStartButton" Click="StreamingStartButton_Click" Content="StreamingAPI Read Start"></Button>
             <Button Name="StreamingStopButton" Click="StreamingStopButton_Click" Content="StreamingAPI Read Stop"></Button>
             <ListBox Name="StreamingViewListBox" Width="auto" Height="120" />
+            <Button Content="ImageUpload" Height="71" Name="ImageUploadButton" Width="Auto" Click="ImageUploadButton_Click" />
         </StackPanel>
         <Grid Visibility="Collapsed" Name="BrowserAuthorize">
             <Grid.RowDefinitions>
@@ -43,7 +44,7 @@
             </Grid.RowDefinitions>
 
             <phone:WebBrowser Name="webBrowser1" />
-            <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <StackPanel Grid.Row="1" Orientation="Horizontal" Background="Violet">
                 <TextBlock Text="PinCode:"></TextBlock>
                 <TextBox Name="PinCodeTextBox" Width="200"></TextBox>
                 <Button Content="Enter" Click="GetAccessTokenButton_Click"></Button>

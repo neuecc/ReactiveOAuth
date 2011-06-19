@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Codeplex.OAuth;
 using System.IO;
-using System.Reactive.Linq;
-using System.Reactive.Concurrency;
 using System.Net;
-using System.Reactive.Subjects;
+using System.Reactive.Linq;
+using Codeplex.OAuth;
 
 class Program
 {
@@ -22,9 +17,9 @@ class Program
         var accessToken = new AccessToken(accessTokenKey, accessTokenSecret);
         var client = new TwitpicClient(consumerKey, consumerSecret, accessToken);
 
-        var file = File.ReadAllBytes(@"C:\Users\neuecc\Desktop\codecontracts_unproven.jpg");
+        var file = File.ReadAllBytes(@"set upload filepath");
 
-        client.UploadPicture("testpicture", file)
+        client.UploadPicture("testpicture", "MESSAGE TEST!", file)
             .Catch((WebException ex) =>
             {
                 Console.WriteLine(new StreamReader(ex.Response.GetResponseStream()).ReadToEnd());

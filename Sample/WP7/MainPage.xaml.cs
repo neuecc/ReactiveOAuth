@@ -10,15 +10,19 @@ using System.Xml.Linq;
 using Codeplex.OAuth;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Reactive;
+using Microsoft.Phone.Tasks;
 
 namespace TwitterClientSample
 {
     public partial class MainPage : PhoneApplicationPage
     {
+        CameraCaptureTask camera = new Microsoft.Phone.Tasks.CameraCaptureTask();
+
         // Constructor
         public MainPage()
         {
             InitializeComponent();
+            camera.Completed += new EventHandler<PhotoResult>(camera_Completed);
         }
 
         // set your consumerkey and secret
@@ -161,6 +165,36 @@ namespace TwitterClientSample
             stramingHandle.Dispose();
             StreamingStartButton.Content = "StreamingAPI Read Start";
             StreamingStartButton.IsEnabled = true;
+        }
+
+
+        // Image Upload to Twitpic
+        private void ImageUploadButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (accessToken == null) { MessageBox.Show("at first, get accessToken"); return; }
+
+            camera.Show();
+        }
+
+        void camera_Completed(object sender, PhotoResult e)
+        {
+            if (e.TaskResult == TaskResult.OK)
+            {
+                var stream = e.ChosenPhoto;
+                var buffer = new byte[stream.Length];
+                stream.Read(buffer, 0, buffer.Length);
+
+                new TwitpicClient(ConsumerKey, ConsumerSecret, accessToken)
+                    .UploadPicture(e.OriginalFileName, "from WP7!", buffer)
+                    .ObserveOnDispatcher()
+                    .Catch((WebException ex) =>
+                    {
+                        MessageBox.Show("Do you rewrite ApiKey of TwitpicClient.cs?");
+                        MessageBox.Show(new StreamReader(ex.Response.GetResponseStream()).ReadToEnd());
+                        return Observable.Empty<string>();
+                    })
+                    .Subscribe(s => MessageBox.Show(s), ex => MessageBox.Show(ex.ToString()));
+            }
         }
     }
 
