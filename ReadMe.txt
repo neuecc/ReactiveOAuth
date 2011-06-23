@@ -1,6 +1,6 @@
 /*---------------------------------------------------------------------------
  * ReactiveOAuth
- * ver 0.4.0.0 (Jun. 21th, 2011)
+ * ver 0.4.0.0 (Jun. 23th, 2011)
  *
  * created and maintained by neuecc <ils@neue.cc>
  * licensed under Microsoft Public License(Ms-PL)
@@ -31,7 +31,7 @@ then you can copy, use Sample/TwitpicClient.cs.
 
 // History
 
-2011-06-21
+2011-06-23
 Add
     TwitpicClient Sample
 Fix Bug
