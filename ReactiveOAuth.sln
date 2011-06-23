@@ -28,6 +28,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveOAuth.WP7", "Reacti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitpicClient", "Sample\TwitpicClient\TwitpicClient.csproj", "{9F2EDC59-AE1C-437B-AED4-9F1FA46E1699}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveOAuth.Tests", "ReactiveOAuth.Tests\ReactiveOAuth.Tests.csproj", "{6782A8E8-5138-4323-A2F7-9D74F880B39F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -122,6 +124,16 @@ Global
 		{9F2EDC59-AE1C-437B-AED4-9F1FA46E1699}.Release|Mixed Platforms.Build.0 = Release|x86
 		{9F2EDC59-AE1C-437B-AED4-9F1FA46E1699}.Release|x86.ActiveCfg = Release|x86
 		{9F2EDC59-AE1C-437B-AED4-9F1FA46E1699}.Release|x86.Build.0 = Release|x86
+		{6782A8E8-5138-4323-A2F7-9D74F880B39F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6782A8E8-5138-4323-A2F7-9D74F880B39F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6782A8E8-5138-4323-A2F7-9D74F880B39F}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{6782A8E8-5138-4323-A2F7-9D74F880B39F}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{6782A8E8-5138-4323-A2F7-9D74F880B39F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6782A8E8-5138-4323-A2F7-9D74F880B39F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6782A8E8-5138-4323-A2F7-9D74F880B39F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6782A8E8-5138-4323-A2F7-9D74F880B39F}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{6782A8E8-5138-4323-A2F7-9D74F880B39F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{6782A8E8-5138-4323-A2F7-9D74F880B39F}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

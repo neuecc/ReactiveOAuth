@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>ReactiveOAuth-WP7</id>
-        <version>0.3.0.0</version>
+        <version>0.4.0.0</version>
         <title>ReactiveOAuth-WP7</title>
         <authors>neuecc</authors>
         <owners>neuecc</owners>

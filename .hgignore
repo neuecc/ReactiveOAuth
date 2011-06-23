@@ -9,3 +9,7 @@ glob:Binary/System.*
 syntax: glob
 tool/archive.zip
 tool/*.nupkg
+TestResults*
+*.testsettings
+*.vsmdi
+*.testsettings

@@ -15,7 +15,6 @@ namespace Codeplex.OAuth
     public class TwitpicClient : OAuthBase
     {
         const string ApiKey = ""; // set your apikey
-        static readonly Random random = new Random();
 
         readonly AccessToken accessToken;
 
@@ -49,7 +48,7 @@ namespace Codeplex.OAuth
             var req = CreateRequest("http://api.twitpic.com/2/upload.xml"); // choose xml or json
             req.Method = "POST";
 
-            var boundaryKey = random.Next();
+            var boundaryKey = Guid.NewGuid().ToString();
             var boundary = "--" + boundaryKey;
             req.ContentType = "multipart/form-data; boundary=" + boundaryKey;
 

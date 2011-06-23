@@ -2,34 +2,34 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// アセンブリに関する一般情報は以下の属性セットをとおして制御されます。
+// アセンブリに関する一般情報は以下の属性セットを通して制御されます。
 // アセンブリに関連付けられている情報を変更するには、
 // これらの属性値を変更してください。
-[assembly: AssemblyTitle("ReactiveOAuth.SL")]
+[assembly: AssemblyTitle("ReactiveOAuth.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("ReactiveOAuth.SL")]
-[assembly: AssemblyCopyright("Copyright © neuecc 2011")]
+[assembly: AssemblyProduct("ReactiveOAuth.Tests")]
+[assembly: AssemblyCopyright("Copyright © Microsoft 2011")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 // ComVisible を false に設定すると、その型はこのアセンブリ内で COM コンポーネントから
-// 見えなくなります。このアセンブリ内で COM から型にアクセスする必要がある場合は、
+// 参照できなくなります。このアセンブリ内で COM から型にアクセスする必要がある場合は、 
 // その型の ComVisible 属性を true に設定してください。
 [assembly: ComVisible(false)]
 
 // このプロジェクトが COM に公開される場合、次の GUID がタイプ ライブラリの ID になります。
-[assembly: Guid("0ef419f7-e909-4599-91d2-7e92e202de0c")]
+[assembly: Guid("372e4e92-5504-441a-a441-bfe97fc2a20f")]
 
-// アセンブリのバージョン情報は、以下の 4 つの値で構成されています。
+// アセンブリのバージョン情報は、以下の 4 つの値で構成されています:
 //
 //      Major Version
 //      Minor Version 
 //      Build Number
 //      Revision
 //
-// すべての値を指定するか、下のように '*' を使ってリビジョンおよびビルド番号を
-// 既定値にすることができます。
-[assembly: AssemblyVersion("0.4.0.0")]
-[assembly: AssemblyFileVersion("0.4.0.0")]
+// すべての値を指定するか、以下のように '*' を使用してビルド番号とリビジョン番号を 
+// 既定値にすることができます:
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]

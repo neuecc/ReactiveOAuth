@@ -82,9 +82,6 @@
     <Compile Include="..\ReactiveOAuth\Internal\Guard.cs">
       <Link>Internal\Guard.cs</Link>
     </Compile>
-    <Compile Include="..\ReactiveOAuth\Internal\ObservableForCompatible.cs">
-      <Link>Internal\ObservableForCompatible.cs</Link>
-    </Compile>
     <Compile Include="..\ReactiveOAuth\Internal\Utility.cs">
       <Link>Internal\Utility.cs</Link>
     </Compile>

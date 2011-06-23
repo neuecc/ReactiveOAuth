@@ -9,7 +9,6 @@ using Microsoft.Phone.Reactive;
 #else
 using System.Reactive;
 using System.Reactive.Linq;
-using System.Diagnostics;
 using System.Reactive.Concurrency;
 #endif
 
@@ -307,6 +306,26 @@ namespace Codeplex.OAuth
                             observer.OnCompleted();
                         });
             });
+        }
+    }
+
+    internal static class ObservableForCompatible
+    {
+
+#if WINDOWS_PHONE
+        public static IObservable<IList<T>> Buffer<T>(this IObservable<T> source, int count)
+        {
+            return source.BufferWithCount(count);
+        }
+#endif
+
+        public static IObservable<TSource> Create<TSource>(Func<IObserver<TSource>, IDisposable> subscribe)
+        {
+#if WINDOWS_PHONE
+            return Observable.CreateWithDisposable(subscribe);
+#else
+            return Observable.Create(subscribe);
+#endif
         }
     }
 }

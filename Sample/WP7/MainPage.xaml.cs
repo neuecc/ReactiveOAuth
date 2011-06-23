@@ -16,7 +16,13 @@ namespace TwitterClientSample
 {
     public partial class MainPage : PhoneApplicationPage
     {
+        // set your consumerkey and secret
+        const string ConsumerKey = "";
+        const string ConsumerSecret = "";
+
         CameraCaptureTask camera = new Microsoft.Phone.Tasks.CameraCaptureTask();
+        RequestToken requestToken;
+        AccessToken accessToken;
 
         // Constructor
         public MainPage()
@@ -24,13 +30,6 @@ namespace TwitterClientSample
             InitializeComponent();
             camera.Completed += new EventHandler<PhotoResult>(camera_Completed);
         }
-
-        // set your consumerkey and secret
-        const string ConsumerKey = "";
-        const string ConsumerSecret = "";
-
-        RequestToken requestToken;
-        AccessToken accessToken;
 
         private string ReadWebException(Exception e)
         {

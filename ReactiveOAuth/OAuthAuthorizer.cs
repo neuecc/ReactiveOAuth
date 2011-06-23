@@ -23,7 +23,6 @@ namespace Codeplex.OAuth
         private IObservable<TokenResponse<T>> GetTokenResponse<T>(string url, IEnumerable<Parameter> parameters
             , Func<string, string, T> tokenFactory) where T : Token
         {
-            var postData = Encoding.UTF8.GetBytes(parameters.ToQueryParameter());
             var req = (HttpWebRequest)WebRequest.Create(url);
             req.Headers[HttpRequestHeader.Authorization] = BuildAuthorizationHeader(parameters);
             req.Method = MethodType.Post.ToUpperString();
