@@ -1,32 +1,37 @@
-! *This project is obsolete, plaease check [url:AsyncOAuth|https://github.com/neuecc/AsyncOAuth/]*
-! [url:https://github.com/neuecc/AsyncOAuth/]
-
-
-
-
+ReactiveOAuth
+===
 OAuth library for .NET Framework 4 Client Profile, Silverlight 4 and Windows Phone 7.
-ReactiveOAuth is based on [url:Reactive Extensions(Rx)|http://msdn.microsoft.com/en-us/devlabs/ee794896.aspx]
-All network access return IObservable<T> and everything is asynchronous.
 
-Rx is included in Windows Phone 7.
-If you use ReactiveOAuth then can share code between WPF and Windows Phone 7.
+Info
+---
+This project is obsolete, plaease check [AsyncOAuth](https://github.com/neuecc/AsyncOAuth/).
 
-*Features*
+Archive, import from codeplex.
 
+Description
+---
+OAuth library for .NET Framework 4 Client Profile, Silverlight 4 and Windows Phone 7. ReactiveOAuth is based on [Reactive Extensions(Rx)](http://msdn.microsoft.com/en-us/devlabs/ee794896.aspx). All network access return IObservable<T> and everything is asynchronous.
+
+Rx is included in Windows Phone 7. If you use ReactiveOAuth then can share code between WPF and Windows Phone 7.
+
+Features
+---
 * support .NET Framework 4 Client Profile, Silverlight 4 and Windows Phone 7.
 * support twitter's xAuth
 * easy operation and high affinity for streaming api.
 * NuGet Online Package available ([url:ReactiveOAuth|http://nuget.org/List/Packages/ReactiveOAuth], [url:ReactiveOAuth-WP7|http://nuget.org/List/Packages/ReactiveOAuth-WP7])
 
-! Tutorial for twitter gettoken/get/post/streaming
+Tutorial for twitter gettoken/get/post/streaming
+---
 
-!! GetAccessToken
+GetAccessToken
+---
 
-[image:gettoken.jpg]
+![image](https://cloud.githubusercontent.com/assets/46207/24585069/70f37fb4-17bc-11e7-803f-f2337d23aa32.png)
 
 GetRequestToken -> BuildAuthorizeUrl(and navigate browser)
 
-{code:C#}
+```csharp
 // global variable
 const string ConsumerKey = "consumerkey";
 const string ConsumerSecret = "consumersecret";
@@ -46,13 +51,13 @@ private void GetRequestTokenButton_Click(object sender, RoutedEventArgs e)
             webBrowser1.Navigate(new Uri(url)); // navigate browser
         });
 }    
-{code:C#}
+```
 
-[image:authorized.jpg]
+![image](https://cloud.githubusercontent.com/assets/46207/24585070/76fe0eec-17bc-11e7-92e3-be9470cf6909.png)
 
 (user input pincode) -> GetAccessToken(and other parameter)
 
-{code:C#}
+```csharp
 private void GetAccessTokenButton_Click(object sender, RoutedEventArgs e)
 {
     var pincode = PinCodeTextBox.Text; // userinput
@@ -68,15 +73,16 @@ private void GetAccessTokenButton_Click(object sender, RoutedEventArgs e)
             accessToken = res.Token; // AccessToken
         });
 }
-{code:C#}
+```
 
-!! Get TimeLine
+Get TimeLine
+---
+![image](https://cloud.githubusercontent.com/assets/46207/24585071/7d17f91e-17bc-11e7-82ea-6c29e822539b.png)
 
-[image:gettimeline.jpg]
 
 sorry, image's language is Japanese:)
 
-{code:C#}
+```csharp
 // set url and parameters.
 // parameter can use Collection Initializer
 private void GetTimeLineButton_Click(object sender, RoutedEventArgs e)
@@ -99,13 +105,13 @@ private void GetTimeLineButton_Click(object sender, RoutedEventArgs e)
             a => TimeLineViewListBox.Items.Add(a.Name + ":" + a.Text),
             ex => MessageBox.Show(ex.ToString())); // easy error handling
 }
-{code:C#}
+```
 
-!! Post Status
+Post Status
+---
+![image](https://cloud.githubusercontent.com/assets/46207/24585072/827ed7b0-17bc-11e7-93c9-dc64ab31481c.png)
 
-[image:post.jpg]
-
-{code:C#}
+```csharp
 // if post then set MethodType = MethodType.Post
 private void PostButton_Click(object sender, RoutedEventArgs e)
 {
@@ -126,7 +132,7 @@ private void PostButton_Click(object sender, RoutedEventArgs e)
 
 StreamingAPI
 ---
-[image:streaming.jpg]
+![image](https://cloud.githubusercontent.com/assets/46207/24585075/88b6c2fa-17bc-11e7-8513-172d573a45cb.png)
 
 WPF StreamingAPI sample
 read JSON using with [DynamicJson](http://dynamicjson.codeplex.com/)
