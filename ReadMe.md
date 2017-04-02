@@ -19,7 +19,7 @@ Features
 * support .NET Framework 4 Client Profile, Silverlight 4 and Windows Phone 7.
 * support twitter's xAuth
 * easy operation and high affinity for streaming api.
-* NuGet Online Package available ([url:ReactiveOAuth|http://nuget.org/List/Packages/ReactiveOAuth], [url:ReactiveOAuth-WP7|http://nuget.org/List/Packages/ReactiveOAuth-WP7])
+* NuGet Online Package available ([ReactiveOAuth](http://nuget.org/List/Packages/ReactiveOAuth), [ReactiveOAuth-WP7](http://nuget.org/List/Packages/ReactiveOAuth-WP7)
 
 Tutorial for twitter gettoken/get/post/streaming
 ---
